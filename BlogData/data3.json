@@ -1,0 +1,6 @@
+{
+    "id":"3",
+    "title":"Javascript Errors",
+    "content":"Murphy’s law states that whatever can go wrong will eventually go wrong. This applies a tad too well in the world of programming. If you create an application, chances are you’ll create bugs and other issues. Errors in JavaScript are one such common issue! See how Kinsta stacks up against the competition.Select your provider Compare A software product’s success depends on how well its creators can resolve these issues before hurting their users. And JavaScript, out of all programming languages, is notorious for its average error handling design.If you’re building a JavaScript application, there’s a high chance you’ll mess up with data types at one point or another. If not that, then you might end up replacing an undefined with a null or a triple equals operator (===) with a double equals operator (==).It’s only human to make mistakes. This is why we will show you everything you need to know about handling errors in JavaScript.This article will guide you through the basic errors in JavaScript and explain the various errors you might encounter. You’ll then learn how to identify and fix these errors. There are also a couple of tips to handle errors effectively in production environments.",
+    "slug":"data3"
+}

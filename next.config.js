@@ -4,3 +4,10 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+
+module.exports = {
+  images: {
+      domains: ['c4.wallpaperflare.com'],
+      formats: ["image/webp"]
+  },
+}

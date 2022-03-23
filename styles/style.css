@@ -1,0 +1,10 @@
+.nhi{
+    background-color: rgba(168, 168, 168, 0.397);
+    color: rgb(117, 109, 109);
+}
+.bv{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 1rem;
+}
