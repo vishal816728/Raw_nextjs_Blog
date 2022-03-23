@@ -4,19 +4,23 @@ import Link from "next/dist/client/link"
 import { useEffect } from "react"
 import { useState } from "react"
 import {useRouter} from "next/router"
+import * as fs from "fs"
 
-function Blog(){
+
+
+function Blog(props){
   const router=useRouter() 
-     const [blog,setBlog]=useState([])
-     useEffect(()=>{
-       console.log("this is working")
-       fetch("http://localhost:3000/api/getBlogs").then((a)=>{
-         return a.json()}).then(parsed=>{
-           setBlog(parsed)
-         })
+     const [blog,setBlog]=useState(props.arr)
+     //*********************************************  client side rendering *********************
+    //  useEffect(()=>{
+    //    console.log("this is working")
+    //    fetch("http://localhost:3000/api/getBlogs").then((a)=>{
+    //      return a.json()}).then(parsed=>{
+    //        setBlog(parsed)
+    //      })
 
        
-     },[router.isReady])
+    //  },[router.isReady])
      const date=new Date()
 const y=date.getFullYear()
     return (
@@ -43,4 +47,41 @@ const y=date.getFullYear()
     )
 }
 
+// *******************************server side rendering**********************************
+// export async function getServerSideProps(context) {
+//   const res=await fetch("http://localhost:3000/api/getBlogs")
+//   const data=await res.json()
+//   return {
+//     props: {data}, // will be passed to the page component as props
+//   }
+// }
+
+
+//*****************************static site generation *********************/
+export async function getStaticProps(context) {
+  let arr=[]
+    let data=await fs.promises.readdir('BlogData',(err)=>{
+        if(err){
+            console.log(err)
+        }
+    })
+    let len=data.length
+    console.log(data)
+    for(let i=0;i<len;i++){
+        const item=data[i]
+        let myFile=await fs.promises.readFile(`BlogData/${item}`,'utf-8',(err,data)=>{
+            console.log(arr)
+            if(err){
+                console.log(err)
+              
+            }
+        })
+        arr.push(JSON.parse(myFile))
+        
+        
+    }
+  return {
+    props: {arr}, // will be passed to the page component as props
+  }
+}
 export default Blog

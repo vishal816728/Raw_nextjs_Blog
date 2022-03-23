@@ -22,9 +22,9 @@ export default function Home() {
           Welcome to Unique Blog
         </h1>
         <div className={styles.imagewrapper}>
-        <Image className={styles.imghome} src="https://c4.wallpaperflare.com/wallpaper/645/96/47/python-programming-programming-programming-language-code-hd-wallpaper-preview.jpg"
-        
-        width={100} height={100}
+        {/* <Image className={styles.imghome} src="https://c4.wallpaperflare.com/wallpaper/645/96/47/python-programming-programming-programming-language-code-hd-wallpaper-preview.jpg" */}
+        <img src='https://c4.wallpaperflare.com/wallpaper/645/96/47/python-programming-programming-programming-language-code-hd-wallpaper-preview.jpg'
+        width={100} height={100} className={styles.imghome}
         />
         </div>
         <p className={styles.description}>
